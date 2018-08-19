@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js\jquery-3.3.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+ .custom {
+  margin:3px;
+  min-height:100px;
+
+ }
+ input[type="text"],
+select.form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+  </style>
+  <script>
+  function findgst()
+  {
+  var entamt=$('#amt').val();
+  $('#r1').val(entamt);
+  var gst=$('#rate').val();
+  $('#r2').val(gst);
+  //alert(entamt +"==="+ gst);
+  var gst_amt = parseInt(entamt) * parseInt(gst);
+  var gst_amt1 = parseInt(gst_amt) / 100;
+ 
+  $('#r3').val(gst_amt1);
+  var total = parseInt(gst_amt1) + parseInt(entamt);
+  $('#r4').val(total);
+  $('#mainDiv').show();
+  }
+  
+  </script>
+  
+</head>
+<body>
+  
+
+ <div class="container">
+ <a href="index.html">
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="containernav">
+  <div class="navbar-header">
+  <div class="navbar-brand">
+<center><span class="hdrText">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-calculator" aria-hidden="true"></i>&nbsp;GST CALCULATOR</span></center></div>
+</div>
+</div>
+</nav></a>
+ <br>
+ <br>
+ <br>
+<div class="form-group">
+ 
+  <input type="text" class="form-control" id="amt" placeholder="Amount" style="text-align: right">
+
+  <label for="sel1">Rate of Gst:</label>
+  <select class="form-control" id="rate">
+    <option>5%</option><hr>
+    <option>12%</option>
+    <option>18%</option>
+    <option>28%</option>
+  </select>
+<br>
+<center><button type="button" class="btn btn-danger" onclick="findgst()">CALCULATE</button></center>
+
+</div></div>
+<br>
+<div class="container-fluid" id="mainDiv" style="display:none">
+<div class="row">
+
+    <div class="col-md-12 col-sm-12 col-xs-12" style="background-color:#2BBBAD;">
+	<div class="custom"><br>
+	<h4><b>Amount (&nbsp;<i class="fa fa-inr" aria-hidden="true"></i>&nbsp;):</b></h4>
+	<input type="textbox" class="form-control" id="r1">
+	</div>
+	</div><hr>
+	<div class="col-md-12 col-sm-12 col-xs-12" style="background-color:#2BBBAD;">
+	<div class="custom"><br>
+	<h4><b>Rate of Gst:</b></h4>
+	<input type="textbox" class="form-control" id="r2">
+	</div>
+	</div><hr>
+	<div class="col-md-12 col-sm-12 col-xs-12" style="background-color:#2BBBAD;">
+	<div class="custom"><br>
+	<h4><b>Gst Amount (&nbsp;<i class="fa fa-inr" aria-hidden="true"></i>&nbsp;):</b></h4>
+	<input type="textbox" class="form-control" id="r3">
+	</div>
+	</div><hr>
+	<div class="col-md-12 col-sm-12 col-xs-12" style="background-color:#2BBBAD;">
+	<div class="custom"><br>
+	<h4><b>Total Amount (&nbsp;<i class="fa fa-inr" aria-hidden="true"></i>&nbsp;):</b></h4>
+	<input type="textbox" class="form-control" id="r4">
+	</div>
+	</div><hr>
+	</div>
+</body>
+</html>
